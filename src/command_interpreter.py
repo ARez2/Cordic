@@ -5,7 +5,7 @@ from command_clients.debug import DebugClient
 import time
 from datetime import timedelta
 from lib import utils
-import json
+
 
 from lib.utils import COLOR_RED, COLOR_GREEN, COLOR_BLUE
 
