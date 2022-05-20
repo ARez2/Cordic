@@ -366,14 +366,13 @@ class JiraUser():
                 "duedate": f'<t:{round(datetime.strptime(issue["fields"]["duedate"],"%Y-%m-%d").timestamp())}>',
                 "assignee": assignee,
                 "descriptions": descriptions,
-                "link": f"https://{self.domain}.atlassian.net/browse/{key}"   #!
+                "link": f"https://{self.domain}.atlassian.net/browse/{key}"   
             }
             embedstructure = {
                 "title": key + ": " + str(issue["fields"]["summary"]),
                 "description": None,
                 "fields": fields,
                 "color": COLOR_BLUE
-
             }
         else:
             embedstructure = {

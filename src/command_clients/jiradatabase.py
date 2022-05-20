@@ -23,9 +23,6 @@ class jiradatabase():
         self.cur = self.con.cursor()
         self.setup_tables()
 
-        #if os.path.getsize(os.path.join(os.path.dirname(__file__), self.filename)) == 0:
-        #    self.setup_tables()
-
     #erstellt tabellen, falls nicht vorhanden
     def setup_tables(self):
         self.cur.execute('''CREATE TABLE IF NOT EXISTS users

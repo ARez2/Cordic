@@ -85,7 +85,7 @@ class CommandInterpreter():
             userprojects_kw = ["projects_by_user", "userprojects"]
             comment_kw = ["comment_on", "comment"]
             if command in connect_kw:
-                if args is None:
+                if args is None or len(args) < 3:
                     return {
                         "title": "ERROR",
                         "description": "Missing Arguments!",
@@ -161,7 +161,7 @@ class CommandInterpreter():
                         "`projects`": "Returns all projects where the user has a task",
                         "`projects_by_user` | `userprojects`": "Return all running Projects by a user \n args: [optional] `ping or dcID`",
                         "`comment_on` | `comment`": "Leave a comment under an issue \n args: `issuekey comment`",
-                        "`Reference`": "There is a difference between `issuename` and `issuekey`. Structure issuekey: projectname-number"
+                        "`Reference`": "There is a difference between `issuename` and `issuekey`. Structure issuekey: projectname-number /n If the Bot does not react, then connect again /n the domain is like this 'cordic'"
                     },
                     "color": COLOR_GREEN
                 }
