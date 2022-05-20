@@ -45,7 +45,11 @@ In einer .env-Datei folgenden Code schreiben:
     
     # Für Windows:
     venv\Scripts\activate
-    # Für Linux
-    . venv\bin\activate
+    # Für *Nix
+    source venv\bin\activate
     
-    python cordic.py
+     # Windows
+    python cordic.py 
+
+    # *Nix
+    python3 cordic.py 
