@@ -43,6 +43,7 @@ class Text(DiscordChannel):
                                     required=True,
                                     choices={
                                         "GENERAL_setup": "setup",
+                                        "GENERAL_help": "help",
 
                                         "JIRA_help": "help",
                                         "JIRA_connect_user": "connect_user",

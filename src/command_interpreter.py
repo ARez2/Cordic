@@ -64,6 +64,15 @@ class CommandInterpreter():
 
 
     async def handle_general_commands(self, client : GeneralClient, command, args, user, guild):
+        if command == "help":
+            return {
+                    "title": "General Commands",
+                    "description": "Use these general purpose commands to interact with Cordic.",
+                    "fields": {
+                        "`setup`": "Creates a new category + role for the project and auto-assigns users to it (uses jira client) \n Note: If the bot does not respond, just run the command again \n args: `projectname`",
+                        },
+                    "color": COLOR_GREEN
+                }
         if command == "setup":
             # args: domain name (jira)
             if args is None or len(args) <= 0:
