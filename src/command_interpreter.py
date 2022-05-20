@@ -69,7 +69,8 @@ class CommandInterpreter():
                     "title": "General Commands",
                     "description": "Use these general purpose commands to interact with Cordic.",
                     "fields": {
-                        "`setup`": "Creates a new category + role for the project and auto-assigns users to it (uses jira client) \n Note: If the bot does not respond, just run the command again \n args: `projectname`",
+                        "`setup`": "Creates a new category + role for the project and auto-assigns users to it (uses jira client) \n Note: If the bot does not respond, just run the command again \n args: `projectkey`",
+                        "`Reference`": "There is a difference between `projectname` and `projectkey`"
                         },
                     "color": COLOR_GREEN
                 }
