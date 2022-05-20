@@ -248,10 +248,11 @@ class CommandInterpreter():
                     "description":"Create/View/Delete Events \n Usage: `/cordic e [CMD] [**OPTIONS/ARGS]` \n",
                     "fields": {
                             "`help`": "Shows this menu",
-                            "`create` | `cre`": "Create event args: `Date Name Description Extra_Message:Optional ID-Length:Optional`",
+                            "`create` | `cre`": "Create event args: `Date Name 'Description' 'Extra_Message:Optional' 'ID-Length:Optional'`",
                             "`select` | `sel`": "View event \n args: `ID`",
                             "`delete` | `del`": "Delete event \n args: `ID`",
                             "`join`": "Subscribe to an Event \n args: `ID`",
+                            "`Reference`": "enter the date in this form: `Day.Month.Year-Hour:Minute:Second`"
                         },
                     "color":COLOR_GREEN}
 
