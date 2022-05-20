@@ -19,8 +19,8 @@ einen neuen Token erstellen (am besten mit "Never expire")
 ### Repo installieren
 
     cd <Projektordner>
-    git clone https://github.com/ARez2/DiscordManagementBot.git
-    cd DiscordManagementBot
+    git clone https://github.com/ARez2/Cordic.git
+    cd Cordic
 
 
 Venv anlegen und aktivieren
@@ -41,7 +41,7 @@ In einer .env-Datei folgenden Code schreiben:
 
 ## Bot ausführen
    
-    cd <Projektordner>\DiscordManagementBot
+    cd <Projektordner>\Cordic
     
     # Für Windows:
     venv\Scripts\activate
