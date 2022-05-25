@@ -62,10 +62,13 @@ class GeneralClient():
         async for user in guild.fetch_members(limit=None):
             if user.bot: continue
             project_embed = jiraclient.get_projects_by_user(user)
+            if project_embed.get("fields") is None:
+                continue
             project_list = project_embed["fields"]["projects"]
             if len(project_list) <= 0:
                 continue
             for project in project_list.split(" ,"):
+                project = project.split(":")[0]
                 if project.lower() == domain_and_project_name.lower() and nextcord.utils.get(user.roles, name=rolename) is None:
                     auto_assigned_someone = True
                     await user.add_roles(role)
