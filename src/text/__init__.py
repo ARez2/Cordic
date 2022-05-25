@@ -72,4 +72,5 @@ class Text(DiscordChannel):
         if isinstance(output_data,str):
             output_data = json.loads(output_data)
         
-        await ctx.send(embed=self.embed_from_dict(output_data), ephemeral=command in self.SENSITIVE_COMMANDS)
+        #embed= self.embed_from_dict(output_data)
+        await ctx.send(embed=self.embed_from_dict(output_data), ephemeral=command in self.SENSITIVE_COMMANDS)      

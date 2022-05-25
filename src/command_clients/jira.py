@@ -270,7 +270,7 @@ class JiraUser():
             projects = []
             for key in list:
                 issue, error = self.__api_get_issue_by_key(key)
-                if issue is not None and issue["fields"]["project"]["key"] not in projects:
+                if issue is not None and (issue["fields"]["project"]["key"] + ": " + issue["fields"]["project"]["name"]) not in projects:
                     projects.append(issue["fields"]["project"]["key"] + ": " + issue["fields"]["project"]["name"])
             delimiter = " ,"
             projectnames = delimiter.join(projects)
