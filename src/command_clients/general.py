@@ -12,7 +12,7 @@ class GeneralClient():
         response_text = "Tip: Make sure all users aren't set to 'Invisible' as status"
         
         domain_and_project_name = args[0]
-        rolename = f"project_{domain_and_project_name}_asignee"
+        rolename = f"project_{domain_and_project_name.lower()}_asignee"
         categoryname = f"Project {domain_and_project_name}"
 
         role = nextcord.utils.get(guild.roles, name=rolename)
