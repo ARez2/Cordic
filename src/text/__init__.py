@@ -29,7 +29,7 @@ class Text(DiscordChannel):
     async def cordic(self,
         ctx,
         command_type : str = SlashOption(name="command_type",
-                                        description="Wether command is a jira or event command",
+                                        description="Which type of command are you trying to access?",
                                         required=True,
                                         choices={
                                             "Cordic general commands": "general",
