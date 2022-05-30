@@ -50,8 +50,14 @@ class GeneralClient():
         if auto_assigned_someone:
             response_text += f" Users have been automatically assigned to the `{rolename}` role."
         
+        title = f"The project `{domain_and_project_name}` has been set up."
+        
+        print(title)
+        print(response_text)
+        print()
+
         return {
-            "title": f"The project `{domain_and_project_name}` has been set up.",
+            "title": title,
             "description": response_text,
             "color": COLOR_GREEN,
         }

@@ -73,4 +73,7 @@ class Text(DiscordChannel):
             output_data = json.loads(output_data)
         
         embed = self.embed_from_dict(output_data)
-        await ctx.send(embed=embed, ephemeral=command in self.SENSITIVE_COMMANDS)      
+        try:
+            await ctx.send(embed=embed, ephemeral=command in self.SENSITIVE_COMMANDS)
+        except nextcord.errors.NotFound:
+            print("Discord API Time out!")
