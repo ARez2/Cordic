@@ -10,7 +10,6 @@ async def _e_client_start(cls, httpclient):
         if i[1] == "running":
             running.append(i[0])
     for r in running:
-        print(vars(r))
         await httpclient.bot.get_channel(int(r.channel)).send(
             embed=httpclient.embed_from_dict({
                 "title": "🔔 Event!",
