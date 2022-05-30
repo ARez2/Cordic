@@ -98,11 +98,7 @@ class JiraClient():
 
     def user_exist(self, dcuserID):
         self.db = jiradatabase()
-        if self.db.user_exist(dcuserID):
-            return True
-        else:
-            return False
-
+        return self.db.user_exist(dcuserID)
 
 class JiraUser():
     def __init__(self, email, token, dcuserID, domain):
