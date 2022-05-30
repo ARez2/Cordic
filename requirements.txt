@@ -3,5 +3,4 @@ requests==2.27.1
 SQLAlchemy==1.4.31
 pygithub
 logging==0.4.9.6
-faulthandler==3.2
 python-dotenv==0.20.0
