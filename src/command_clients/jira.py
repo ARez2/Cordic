@@ -346,10 +346,8 @@ class JiraUser():
                     for line2 in line["content"]:
                         if line2["type"] == "text":
                             descriptions.append(line2["text"])
-            __created = str(issue["fields"]["created"])
-            c_strptime, uselessmilliseconds = __created.split(".")
-            __created = str(issue["fields"]["updated"])
-            u_strptime, uselessmilliseconds = __created.split(".")
+            
+            
 
             fields = {
                 "project": str(issue["fields"]["project"]["key"]),
@@ -357,13 +355,24 @@ class JiraUser():
                 "issuetype": str(issue["fields"]["issuetype"]["name"]),
                 "status": str(issue["fields"]["status"]["name"]),
                 "priority": str(issue["fields"]["priority"]["name"]),
-                "created":f'<t:{round(datetime.strptime(c_strptime,"%Y-%m-%dT%H:%M:%S").timestamp())}>',
-                "lastUpdate":f'<t:{round(datetime.strptime(u_strptime,"%Y-%m-%dT%H:%M:%S").timestamp())}>',
-                "duedate": f'<t:{round(datetime.strptime(issue["fields"]["duedate"],"%Y-%m-%d").timestamp())}>',
+                "created": "",
+                "lastUpdate":"",
+                "duedate": "",
                 "assignee": assignee,
                 "descriptions": descriptions,
                 "link": f"https://{self.domain}.atlassian.net/browse/{key}"   
             }
+            if issue["fields"]["created"] is not None:
+                __created = str(issue["fields"]["created"])
+                c_strptime, uselessmilliseconds = __created.split(".")
+                fields["created"] = f'<t:{round(datetime.strptime(c_strptime,"%Y-%m-%dT%H:%M:%S").timestamp())}>'
+            if issue["fields"]["updated"] is not None:
+                __created = str(issue["fields"]["updated"])
+                u_strptime, uselessmilliseconds = __created.split(".")
+                fields["lastUpdate"] = f'<t:{round(datetime.strptime(u_strptime,"%Y-%m-%dT%H:%M:%S").timestamp())}>'
+            if issue["fields"]["duedate"] is not None:
+                fields["duedate"] = f'<t:{round(datetime.strptime(issue["fields"]["duedate"],"%Y-%m-%d").timestamp())}>'
+
             embedstructure = {
                 "title": key + ": " + str(issue["fields"]["summary"]),
                 "description": None,
